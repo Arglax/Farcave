@@ -1,25 +1,24 @@
-﻿import os
+
+import os
 import math
 import random
 import time
-CHAPTER_INFO = {
-    "id": 2,
-    "title": "Chapter 2: Ascent and Ash",
-    "version": "0.0.4",
-    "author": "Arglax",
-}
 from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 from rich.table import Table
 # Import structural assets from our main codebase module
 import Farcave as core
-
-
-
 console = Console()
-
-
+# =========================================================================
+# CHAPTER METADATA
+# =========================================================================
+CHAPTER_INFO = {
+    "id": 2,
+    "title": "Chapter 2: Ascent and Ash",
+    "version": "0.0.4",
+    "author": "Arglax",
+}
 
 # =========================================================================
 # CHAPTER 2 ASCII ART EXTENSIONS
