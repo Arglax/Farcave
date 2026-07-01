@@ -411,7 +411,7 @@ class Scene18DepthsAltar(core.Scene):
             sacrifice_cost = player.coins // 2
             player.coins -= sacrifice_cost
             player.cursed = False
-            console.print(f"[bold green]✓ The anchor channels consume {sacrifice_cost} coins and cleanse your timeline! CURSE REPTURED AND PURGED![/bold green]")
+            console.print(f"[bold green]✓ The anchor channels consume {sacrifice_cost} coins and cleanse your timeline! CURSE RUPTURED AND PURGED![/bold green]")
             time.sleep(1.5)
             
         input("\nPress Enter to face the seismic tremors...")
