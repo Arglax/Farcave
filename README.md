@@ -55,7 +55,7 @@ Farcave separates the **engine** from the **story chapters**.
 From the Main Menu, select:
 
 ```
-Update / Sync Chapters
+[4] Check for Updates / Sync Chapters (select y when prompted)
 ```
 
 The game will automatically:
