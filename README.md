@@ -135,7 +135,7 @@ Do not rename the `chapters` folder, as the engine automatically scans it for ex
 
 # 📦 Current Version
 
-**Version:** `0.0.5` (Pre-Alpha)
+**Version:** `0.0.4` (Pre-Alpha)
 
 ---
 
