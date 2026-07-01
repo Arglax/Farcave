@@ -1,36 +1,44 @@
-![Version](https://img.shields.io/badge/version-0.0.4-blue)
-![Status](https://img.shields.io/badge/status-Pre--Alpha-orange)
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
+# 💀 FARCAVE
 
-# 💀 FARCAVE 💀
+*A terminal-first dark fantasy RPG engine where every decision has weight.*
 
-An uncompromising, dark-fantasy text-based roguelike RPG engine played entirely within your command terminal.
+Farcave is a single-player, text-based roguelike RPG played entirely in the command terminal. Explore an ancient underground world, survive dangerous encounters, and build your character through meaningful choices instead of repetitive grinding.
 
-You awaken with frozen stone pressed hard against your cheek. The chill of ancient rock sinks deep into your bones, and your memory is entirely blank. Dripping echoes ring out from vast, invisible voids somewhere far above. You remember absolutely nothing, neither your origin nor the dark machine that brought you here. Below the surface, an ancient world waits, demanding your survival.
-
-Farcave features a modular expansion architecture, built-in cryptographic anti-cheat save tracking, and an asymptotic luck-based dice-rolling mechanic where choices dictate life or permanent death.
+The game is designed around permanent consequences, modular storytelling, and lightweight deployment. No graphics, no launchers, just the terminal.
 
 ---
 
-# 🚀 Getting Started
+## Features
 
-## Option A: Standalone Executable (Recommended)
+* Terminal-first gameplay powered by Python
+* Choice-driven progression with attribute-based skill checks
+* Permanent death
+* Modular chapter expansion system
+* Cryptographically verified save integrity
+* Automatic chapter synchronization
+* Lightweight and cross-platform
 
-1. Download the latest release from the repository's **Releases** page.
-2. Extract the archive (if applicable).
-3. Launch `farcave.exe`.
-4. No Python installation is required.
+---
 
-## Option B: Run From Source
+## Getting Started
 
-1. Clone or download this repository.
-2. Install the required dependency:
+### Option A — Standalone Executable (Recommended)
+
+1. Download the latest release.
+2. Extract the archive if necessary.
+3. Launch **`farcave.exe`**.
+
+No Python installation is required.
+
+### Option B — Run from Source
+
+Install the only required dependency:
 
 ```bash
 pip install rich
 ```
 
-3. Start the game:
+Run the game:
 
 ```bash
 python farcave_main.py
@@ -38,13 +46,13 @@ python farcave_main.py
 
 ---
 
-# 🔄 Updating the Game
+## Updating
 
-Farcave supports two methods of updating.
+Farcave separates the **engine** from the **story chapters**.
 
-## Method 1: In-Game Auto Update (Recommended)
+### Automatic Chapter Updates (Recommended)
 
-From the Main Menu:
+From the Main Menu, select:
 
 ```
 Update / Sync Chapters
@@ -52,52 +60,29 @@ Update / Sync Chapters
 
 The game will automatically:
 
-- Check for newly released chapter modules.
-- Download missing or updated chapters.
-- Store them inside the local `chapters/` directory.
-- Make them immediately available the next time the game starts.
+* detect available chapter updates
+* download missing chapters
+* replace outdated chapter files
+* install everything inside the `chapters/` directory
 
-This method only updates downloadable chapter content and does **not** replace the core game engine.
+No manual file management is required.
 
----
+> [!NOTE]
+> Automatic updates only affect downloadable chapter modules. Core engine updates still require downloading the latest release or source code.
 
-## Method 2: Manual Update (GitHub)
+### Manual Updates
 
-For the latest engine updates:
+If you prefer updating manually:
 
-1. Visit the GitHub repository.
-2. Download the newest release or source code.
-3. Replace your existing:
-
-```
-farcave_main.py
-```
-
-or
-
-```
-farcave.exe
-```
-
-with the latest version.
-
-If downloading the source manually, also replace the contents of the:
-
-```
-chapters/
-```
-
-folder with the newest chapter files.
-
-Your save data will remain compatible whenever possible.
+1. Download the newest release from GitHub.
+2. Replace your existing engine (`farcave.exe` or `farcave_main.py`).
+3. Replace the contents of the `chapters/` folder with the latest versions.
 
 ---
 
-# 📁 Folder Structure
+## Folder Structure
 
-Your installation should resemble:
-
-```
+```text
 Farcave/
 │
 ├── farcave.exe
@@ -110,37 +95,80 @@ Farcave/
     └── ...
 ```
 
-Do not rename the `chapters` folder, as the engine automatically scans it for expansion content.
+> [!IMPORTANT]
+> Do not rename the `chapters` directory. The engine scans this folder automatically when loading expansions.
 
 ---
 
-# 🎮 How to Play
+## Gameplay
 
-- **Read Before You Roll**  
-  Every decision displays the Core Attribute (`STR`, `AGI`, `DEX`, `INT`, `CHA`, `WIS`) it tests. Choose options that match your strongest attributes.
+### Character Progression
 
-- **Manage Your Health**  
-  Healing opportunities are scarce. Running out of HP permanently deletes your save.
+* Gain EXP through encounters.
+* Level up to receive **8 Attribute Points**.
+* Press **`L`** whenever prompted to distribute points.
 
-- **Level Up**  
-  Gain EXP from encounters to level up. Press **`L`** whenever available to allocate **+8 Attribute Points**.
+### Core Attributes
 
-- **Luck (LUK)**  
-  LUK passively grants a chance to empower attribute checks. The chance starts low and scales smoothly as your LUK increases.
+| Attribute | Purpose                                    |
+| --------- | ------------------------------------------ |
+| STR       | Physical power                             |
+| AGI       | Mobility and reflexes                      |
+| DEX       | Precision and finesse                      |
+| INT       | Knowledge and reasoning                    |
+| CHA       | Presence and persuasion                    |
+| WIS       | Awareness and judgment                     |
+| LUK       | Passive chance to empower attribute checks |
 
-- **Sync Chapters**  
-  Check for newly released chapters directly from the Main Menu.
+### Luck (LUK)
+
+Luck does not replace your primary attributes.
+
+Instead, it provides a passive chance to strengthen attribute rolls.
+
+Current balance:
+
+* Starts at **5%**
+* Smooth exponential scaling
+* Caps at **85%** at **999 LUK**
 
 ---
 
-# 📦 Current Version
+<details>
 
-**Version:** `0.0.4` (Pre-Alpha)
+<summary><strong>Death & Save System</strong></summary>
+
+Farcave uses permanent death.
+
+If your HP reaches zero, your active save is deleted.
+
+Save files are cryptographically verified to discourage manual editing while preserving normal gameplay.
+
+</details>
 
 ---
 
-# ⚠️ Notes
+## Project Status
 
-- Save compatibility is maintained whenever possible but is not guaranteed during the pre-alpha stage.
-- Gameplay balance and mechanics are still actively evolving.
-- Additional chapters will continue to be released through the modular chapter system.
+**Current Version:** `v0.0.4`
+
+**Development Stage:** Pre-Alpha
+
+Expect balance adjustments, new mechanics, and additional story content as development continues.
+
+---
+
+## Documentation
+
+* 📖 Design Notes (`DESIGN_NOTES.md`)
+* 📜 Changelog (`CHANGELOG.md`)
+* 🤝 Contributing (`CONTRIBUTING.md`)
+* 📄 License (`LICENSE.md`)
+
+---
+
+## Feedback
+
+Bug reports, balancing feedback, and suggestions are always welcome.
+
+If something feels unfair, confusing, or broken, please open an Issue.
